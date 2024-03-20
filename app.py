@@ -197,8 +197,8 @@ for i in range(0,len(st.session_state.webtoon),4): #pokemons의 배열의 크기
            webtoon= row_webtoon[j]
            with st.expander(label=f"**{i + j + 1}. {webtoon['name']}**", expanded=True):
                 st.image(webtoon["image_url"])
-                #emoji_types = [f"{type_photo_dict[x]} {x}" for x in webtoon["types"]]
-                #st.text(" / ".join(emoji_types))
+                emoji_types = [f"{type_photo_dict[x]} {x}" for x in webtoon["types"]]
+                st.text(" / ".join(emoji_types))
                 delete_button = st.button(label="삭제", key=i + j, use_container_width=True)
                 if delete_button:
                     del st.session_state.webtoon[i + j]
